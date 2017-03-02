@@ -1,13 +1,20 @@
 {
   "name": "weasel.js",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.2.0",
+  "description": "Javascript wrapper for the Warcraft Logs API.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "pintapoff (pintapoff@GitHub)",
   "license": "MIT",
+  "keywords": [
+    "node",
+    "nodejs",
+    "wcl",
+    "warcraft logs",
+    "api"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pintapoff/weasel.js.git"

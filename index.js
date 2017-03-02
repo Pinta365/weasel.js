@@ -1,7 +1,7 @@
 const https = require("https");
 var apiKey = '';
 
-function serializeQuerystring(obj) {
+function serializeparamsstring(obj) {
     var str = [];
     for (var p in obj)
         if (obj.hasOwnProperty(p)) {
@@ -10,10 +10,10 @@ function serializeQuerystring(obj) {
     return str.join("&");
 }
 
-function getData(path, query, callback) {
-    var qs = !query ? {} : query;
+function getData(path, params, callback) {
+    var qs = !params ? {} : params;
     qs.api_key = apiKey;
-    qs = serializeQuerystring(qs);
+    qs = serializeparamsstring(qs);
 
     var options = {
         "method": "GET",
@@ -56,48 +56,53 @@ function getData(path, query, callback) {
 
 module.exports = {
 
+    /**
+     * Sets your Warcraft Logs API-key which is needed to use the WCL API calls.
+     * @param {string} key - your api-key from https://www.warcraftlogs.com/accounts/changeuser
+     */
     setApiKey: function(key) {
-        apiKey = key;
-    },
-    
-    getZones: function(query, callback){
-        getData('/zones', query, callback);
-    },
-    
-    getClasses: function(query, callback){
-        getData('/classes', query, callback);
-    },
-    
-    getRankingsEncounter: function(encounterID, query, callback){
-        getData('/rankings/encounter/' + encounterID, query, callback);
-    },
-    
-    getRankingsCharacter: function(characterName, serverName, serverRegion, query, callback){
-        getData('/rankings/character/' + characterName + '/' + serverName + '/' + serverRegion, query, callback);
-    },
-    
-    getParsesCharacter: function(characterName, serverName, serverRegion, query, callback){
-        getData('/parses/character/'+ characterName + '/' + serverName + '/' + serverRegion, query, callback);
-    },
-     
-    getReportsGuild: function(guildName, guildServer, guildRegion, query, callback) {
-        getData('/reports/guild/' + guildName + '/' + guildServer + '/' + guildRegion, query, callback);
-    },
-    
-    getReportsUser: function(userName, query, callback){
-        getData('/reports/user'+ userName, query, callback);
-    },
-    
-    getReportFights: function(code, query, callback){
-        getData('/report/fights/'+ code, query, callback);
-    },
-    
-    getReportEvents: function(code, query, callback){
-        getData('/report/events/'+ code, query, callback);
-    },
-    
-    getReportTables: function(view, code, query, callback){
-        getData('/report/tables/'+ view + '/' + code, query, callback);
+        if(key && key.trim() != "") {
+            apiKey = key;    
+        }
     },
 
+    getZones: function(params, callback) {
+        getData('/zones', params, callback);
+    },
+
+    getClasses: function(params, callback) {
+        getData('/classes', params, callback);
+    },
+
+    getRankingsEncounter: function(encounterID, params, callback) {
+        getData('/rankings/encounter/' + encounterID, params, callback);
+    },
+
+    getRankingsCharacter: function(characterName, serverName, serverRegion, params, callback) {
+        getData('/rankings/character/' + characterName + '/' + serverName + '/' + serverRegion, params, callback);
+    },
+
+    getParsesCharacter: function(characterName, serverName, serverRegion, params, callback) {
+        getData('/parses/character/' + characterName + '/' + serverName + '/' + serverRegion, params, callback);
+    },
+
+    getReportsGuild: function(guildName, guildServer, guildRegion, params, callback) {
+        getData('/reports/guild/' + guildName + '/' + guildServer + '/' + guildRegion, params, callback);
+    },
+
+    getReportsUser: function(userName, params, callback) {
+        getData('/reports/user' + userName, params, callback);
+    },
+
+    getReportFights: function(code, params, callback) {
+        getData('/report/fights/' + code, params, callback);
+    },
+
+    getReportEvents: function(code, params, callback) {
+        getData('/report/events/' + code, params, callback);
+    },
+
+    getReportTables: function(view, code, params, callback) {
+        getData('/report/tables/' + view + '/' + code, params, callback);
+    }
 };
