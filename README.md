@@ -1,6 +1,6 @@
 Weasel.js
 =========
-Weasel is a wrapper for the Warcraft Logs API. The name Weasel comes from the sites abbrevation WCL that could be pronounced 'Weasel'... I guess. :)
+Weasel is a wrapper for the [Warcraft Logs API](https://www.warcraftlogs.com/v1/docs). The name Weasel comes from the sites abbreviation WCL that could be pronounced 'Weasel'... I guess. :)
 
 ## Installing with NPM
 ```
@@ -38,9 +38,8 @@ I will work on a better documentation but this list of functions should get you 
 @params is an optional json-formated object of extra parameters.
 @callback is the function to run when the api call is done, takes error and data as parameters.
 the rest of the parameters are all strings.
-details on optional parameters and other nifty stuff can be viewed at https://www.warcraftlogs.com/v1/docs for now.
+details on optional parameters and other nifty stuff can be viewed at the [Warcraft Logs API](https://www.warcraftlogs.com/v1/docs) for now.
 ```javascript
-setApiKey('key')
 getZones(params, callback)
 getClasses(params, callback)
 getRankingsEncounter('encounterID', params, callback)

@@ -1,7 +1,7 @@
 const https = require("https");
 var apiKey = '';
 
-function serializeparamsstring(obj) {
+function serializeParamString(obj) {
     var str = [];
     for (var p in obj)
         if (obj.hasOwnProperty(p)) {
@@ -13,12 +13,12 @@ function serializeparamsstring(obj) {
 function getData(path, params, callback) {
     var qs = !params ? {} : params;
     qs.api_key = apiKey;
-    qs = serializeparamsstring(qs);
+    qs = serializeParamString(qs);
 
     var options = {
         "method": "GET",
         "hostname": "www.warcraftlogs.com",
-        "port": null,
+        "port": 443,
         "path": "/v1" + encodeURI(path) + "?" + qs,
         "headers": {
             "cache-control": "no-cache"
