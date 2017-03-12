@@ -1,7 +1,7 @@
 {
   "name": "weasel.js",
-  "version": "0.2.1",
-  "description": "Javascript wrapper for the Warcraft Logs API.",
+  "version": "1.0.0",
+  "description": "Javascript node.js wrapper for the Warcraft Logs API.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

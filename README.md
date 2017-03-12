@@ -33,21 +33,4 @@ api.getReportsGuild('carpe cerevisi', 'moonglade', 'eu', params, function(err, d
 ```
 
 ## Wrapper functions and details
-I will work on a better documentation but this list of functions should get you started atleast.
-
-@params is an optional json-formated object of extra parameters.
-@callback is the function to run when the api call is done, takes error and data as parameters.
-the rest of the parameters are all strings.
-details on optional parameters and other nifty stuff can be viewed at the [Warcraft Logs API](https://www.warcraftlogs.com/v1/docs) for now.
-```javascript
-getZones(params, callback)
-getClasses(params, callback)
-getRankingsEncounter('encounterID', params, callback)
-getRankingsCharacter('characterName', 'serverName', 'serverRegion', params, callback)
-getParsesCharacter('characterName', 'serverName', 'serverRegion', params, callback)
-getReportsGuild('guildName', 'guildServer', 'guildRegion', params, callback) 
-getReportsUser('userName', params, callback)
-getReportFights('code', params, callback)
-getReportEvents('code', params, callback)
-getReportTables('view', 'code', params, callback)
-```
+Check out the documentation found in the /docs/index.html
