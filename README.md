@@ -33,4 +33,4 @@ api.getReportsGuild('carpe cerevisi', 'moonglade', 'eu', params, function(err, d
 ```
 
 ## Wrapper functions and details
-Check out the documentation found in the /docs/index.html
+Check out the documentation found at the [GitHub doc page](https://pintapoff.github.io/weasel.js/index.html).
